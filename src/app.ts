@@ -1,0 +1,22 @@
+import express, { NextFunction, Request, Response } from "express";
+import userRouter from "./modules/user/user.routes";
+import authRouter from "./modules/auth/auth.routes";
+import vehicleRouter from "./modules/vehicle/vehicle.routes";
+import bookingRouter from "./modules/booking/booking.routes";
+const app = express();
+app.use(express.json());
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello World!");
+});
+
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/vehicles", vehicleRouter);
+app.use("/api/v1/bookings", bookingRouter);
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+export default app;
