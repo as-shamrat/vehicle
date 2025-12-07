@@ -9,7 +9,7 @@
     "start": "node dist/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mohammed Arif Shahriar",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
