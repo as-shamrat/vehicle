@@ -6,7 +6,7 @@ import bookingRouter from "./modules/booking/booking.routes";
 const app = express();
 app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to Vehicle Booking System");
+  res.send("Welcome to Vehicle Rental System");
 });
 
 app.use("/api/v1/users", userRouter);
